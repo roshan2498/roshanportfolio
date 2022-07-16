@@ -1,0 +1,15 @@
+.spotify{
+    margin-top: 30px;
+    border-radius: 12px;
+}
+
+.spotify > p{
+    font-weight: bold;
+    margin-left: 90px;
+}
+
+body{
+    width: 1200px;
+    justify-content: center;
+    align-items: center;
+}
