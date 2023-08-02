@@ -2,7 +2,7 @@ import "./App.css";
 
 function App() {
       return (
-          <div className="container my-4">
+            <div className="container my-4">
                   <h1>👋 Roshan Kharke</h1>
                   <div className="container my-3 wrapper">
                         <p>
@@ -48,15 +48,15 @@ function App() {
                   </div>
                   <div className="spotify">
                         <p>
-                            My Gym Playlist 👇 
+                              My Gym Playlist 👇
                         </p>
                         <iframe
                               src="https://open.spotify.com/embed/playlist/3LRGMv8m4JejxYGnMqHBox?utm_source=generator"
                               width="30%"
                               height="380"
                               frameBorder="0"
-                              allowfullscreen=""
                               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                              title="gym"
                         ></iframe>
                   </div>
             </div>

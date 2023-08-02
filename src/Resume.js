@@ -1,12 +1,16 @@
-import React, { useEffect } from 'react'
+import { Document, Page, pdfjs } from 'react-pdf';
+
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+
 
 export default function Resume() {
-    useEffect(() => {
-        window.location.href = "https://drive.google.com/file/d/1Bo0HIAjQHjrtXipnErMIoWDEwxIJQ-sx/view?usp=sharing"
-    }, [])
     return (
-        <div className='container my-5'>
-            <h3>Redirecting to Resume....</h3>
+        <div>
+            <iframe
+                title="file"
+                style={{ width: '100%', height: '100%' }}
+                src={"../public/resume.pdf"}
+            />
         </div>
     )
 }
