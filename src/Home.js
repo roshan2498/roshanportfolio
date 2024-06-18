@@ -52,8 +52,8 @@ function App() {
                         </p>
                         <iframe
                               src="https://open.spotify.com/embed/playlist/3LRGMv8m4JejxYGnMqHBox?utm_source=generator"
-                              width="30%"
-                              height="380"
+                              width="400px"
+                              height="500px"
                               frameBorder="0"
                               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                               title="gym"

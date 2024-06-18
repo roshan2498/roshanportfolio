@@ -1,13 +1,14 @@
-.pdf-container{
+.pdf-container {
     background-color: rgb(128, 121, 121);
+    color: white;
 }
 
-.container{
+.container {
     margin: 0 auto;
     margin-top: 2rem;
 }
 
-.button-container{
+.button-container {
     width: 100%;
     padding-left: 50%;
 }

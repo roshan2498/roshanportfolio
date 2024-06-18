@@ -2,9 +2,11 @@ import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import "react-pdf/dist/esm/Page/TextLayer.css"
 import "./resume.css";
+import useDeviceType from "./useDeviceType";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 const Resume = () => {
+    const isMobile = useDeviceType();
     const pdfUrl = 'https://raw.githubusercontent.com/roshan2498/roshanportfolio/main/public/resume.pdf';
 
     const handleDownload = () => {
@@ -21,7 +23,7 @@ const Resume = () => {
             </div>
             <div >
                 <Document file={pdfUrl} options={{ workerSrc: pdfjs.GlobalWorkerOptions.workerSrc }} >
-                    <Page pageNumber={1} scale={2} />
+                    <Page pageNumber={1} scale={isMobile ? 1 : 2} />
                 </Document>
             </div>
         </div>
