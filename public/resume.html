@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@5.0.8/index.min.css"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:10pt;color:#111;background:#fff;line-height:1.45;}
+.page{max-width:760px;margin:0 auto;padding:28px 36px;}
+h1{font-size:20pt;font-weight:700;text-align:center;letter-spacing:.5px;margin-bottom:5px;}
+.contact{text-align:center;font-size:8.5pt;color:#333;margin-bottom:12px;}
+.contact a{color:#111;text-decoration:none;}
+.contact span{margin:0 5px;color:#999;}
+.sec{margin-bottom:10px;}
+.sec-title{font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;border-bottom:1px solid #111;padding-bottom:2px;margin-bottom:7px;}
+.row{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;}
+.job-title{font-weight:700;font-size:9.5pt;}
+.meta{font-size:8pt;color:#444;}
+.sub{font-size:8pt;color:#555;font-style:italic;margin:2px 0 4px;}
+ul{padding-left:14px;margin-top:3px;}
+li{margin-bottom:2.5px;font-size:9pt;}
+.skills-table{width:100%;border-collapse:collapse;font-size:9pt;}
+.skills-table td{padding:2px 4px;vertical-align:top;}
+.skills-table td:first-child{font-weight:700;white-space:nowrap;width:110px;padding-right:8px;}
+.edu-row{display:flex;justify-content:space-between;}
+.pub{font-size:8.5pt;color:#333;}
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>Roshan Kharke</h1>
+<div class="contact">
+  <a href="mailto:roshan.kharke@gmail.com">roshan.kharke@gmail.com</a>
+  <span>|</span>(+91) 8178338540<span>|</span>
+  <a href="https://github.com/roshan2498">github.com/roshan2498</a>
+  <span>|</span>
+  <a href="https://linkedin.com/in/roshan2498">linkedin.com/in/roshan2498</a>
+  <span>|</span>  <a href="https://leetcode.com/u/nikoCodes">leetcode.com/nikoCodes</a>
+</div>
+
+<div class="sec">
+  <div class="sec-title">Summary</div>
+  <p style="font-size:9pt;">Full-stack Software Engineer with 4+ years of experience building large-scale, high-performance frontend systems and scalable backend services. Deep expertise in Angular, React, Electron, and distributed system design with a strong foundation in data structures, algorithms, and system design. Proven track record of leading UI architecture decisions, optimizing Core Web Vitals, and shipping accessible, production-grade applications serving tens of thousands of users. Experience working on internal Google tools and building AI-powered healthcare and fintech products.</p>
+</div>
+
+<div class="sec">
+  <div class="sec-title">Work Experience</div>
+
+  <div style="margin-bottom:10px;">
+    <div class="row">
+      <span class="job-title">Innovaccer &mdash; Software Engineer II</span>
+      <span class="meta">06.2025 &ndash; Present &nbsp;|&nbsp; Noida, India</span>
+    </div>
+    <div class="sub">Equipp Copilot (AI-powered Pharmacy Platform) &mdash; built on Innote, Innovaccer's clinical intelligence suite</div>
+    <ul>
+      <li>Architected <strong>Equipp Copilot</strong>, an AI-powered desktop application using <strong>Electron + React</strong>, reducing pharmacist task-switching time by ~40% by consolidating multiple tools into a unified interface.</li>
+      <li>Designed a <strong>modular, reusable component library</strong> in React adopted across 3+ product lines, reducing feature delivery time by 30% and enabling independent team development.</li>
+      <li>Built a <strong>FastAPI (Python) backend</strong> with <strong>CloudWatch</strong> metrics and alerting, serving AI-generated clinical recommendations at p95 &lt;200ms to 10K+ concurrent pharmacy users.</li>
+      <li>Containerized the full stack using <strong>Docker and Kubernetes on AWS (ECS, EKS)</strong> with Terraform IaC, enabling zero-downtime deployments and 5x traffic growth with no infrastructure rewrites.</li>
+      <li>Optimized <strong>MongoDB and PostgreSQL</strong> schemas via strategic indexing, connection pooling, and Redis caching — improving read performance by 35% for high-frequency clinical data access.</li>
+      <li>Led <strong>design reviews across 3 engineering teams</strong>, presenting trade-off analysis on API versioning, backward compatibility, and performance vs. feature complexity.</li>
+      <li>Grew automated test coverage from 42% to 78% via <strong>Playwright E2E tests</strong> and expanded Jest/RTL unit suites; established code review standards covering WCAG 2.1 AA, testability, and bundle budgets.</li>
+      <li>Contributed to <strong>hiring processes</strong>, screening 15+ candidates and conducting technical interviews on DSA, system design, and coding proficiency.</li>
+    </ul>
+  </div>
+
+  <div style="margin-bottom:10px;">
+    <div class="row">
+      <span class="job-title">Biz2x &mdash; Software Engineer (A2)</span>
+      <span class="meta">02.2024 &ndash; 06.2025 &nbsp;|&nbsp; Noida, India</span>
+    </div>
+    <ul>
+      <li>Delivered a <strong>customer journey platform</strong> with independently deployable Angular microfrontends, improving development velocity across 5+ business units.</li>
+      <li>Deployed a <strong>microservices backend</strong> with MySQL and Redis on AWS (EC2, RDS, ElastiCache), achieving 30% faster API response times and 25% reduction in server load.</li>
+      <li>Built a <strong>unified authentication and RBAC orchestrator</strong> supporting OAuth 2.0, SAML, and custom identity providers — reducing auth-related incidents by 60%.</li>
+      <li>Integrated <strong>Yodlee &amp; Finicity financial APIs</strong> with retry logic and circuit breakers, processing 50K+ daily aggregation requests at 99.5% uptime.</li>
+      <li>Implemented <strong>Angular Universal (SSR)</strong> achieving LCP &lt;1.2s, CLS &lt;0.1, FID &lt;100ms — improving SEO and conversion rates by 15%.</li>
+    </ul>
+  </div>
+
+  <div>
+    <div class="row">
+      <span class="job-title">EPAM Systems &mdash; Software Engineer (A1)</span>
+      <span class="meta">11.2021 &ndash; 01.2024 &nbsp;|&nbsp; Hyderabad, India</span>
+    </div>
+    <div class="sub">Project: gPTO-Tech &mdash; Internal tooling for Google (On-site, Google Gurugram)</div>
+    <ul>
+      <li>Contributed to design and deployment of <strong>internal Google tooling</strong> using Java 8 and Google's internal stack (Critique, Piper, Buganizer, Angular, Rapid).</li>
+      <li>Built a <strong>Chrome Extension</strong> integrating internal APIs to surface case data for 500+ internal users, reducing manual lookup time by 50%.</li>
+      <li>Created <strong>reusable, pixel-perfect Angular UI components</strong> verified via automated visual regression testing against Figma specs across all target viewports.</li>
+      <li>Maintained &gt;80% unit test coverage using <strong>JUnit and Mockito</strong>; participated in design and code reviews aligned with Google engineering best practices.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-title">Skills</div>
+  <table class="skills-table">
+    <tr><td>Frontend</td><td>React, Angular, Next.js, Electron, TypeScript, JavaScript (ES2023+), HTML5, CSS3, Tailwind, Chakra UI, RxJS, Redux, NgRx</td></tr>
+    <tr><td>Backend</td><td>Node.js, Express, FastAPI (Python), Java 8, REST APIs, WebSockets, GraphQL, Microservices Architecture</td></tr>
+    <tr><td>Databases</td><td>MongoDB, MySQL, PostgreSQL, Redis — query optimization, indexing, connection pooling</td></tr>
+    <tr><td>Cloud &amp; DevOps</td><td>AWS (EC2, S3, Lambda, RDS, ECS, EKS), Docker, Kubernetes, Terraform, CI/CD, GitHub Actions</td></tr>
+    <tr><td>Monitoring</td><td>CloudWatch, Grafana, Prometheus, distributed tracing, alerting</td></tr>
+    <tr><td>Testing</td><td>Jest, React Testing Library, Playwright, JUnit, Mockito, E2E &amp; integration testing</td></tr>
+    <tr><td>Performance</td><td>Core Web Vitals, Lazy Loading, Code Splitting, SSR/SSG, Bundle Optimization, Chrome DevTools Profiling</td></tr>
+    <tr><td>CS Fundamentals</td><td>Data Structures &amp; Algorithms, OOP, Design Patterns, Distributed Systems, OS, Computer Networks, System Design</td></tr>
+    <tr><td>Languages</td><td>JavaScript, TypeScript, Python, Java, C/C++ (STL)</td></tr>
+  </table>
+</div>
+
+<div class="sec">
+  <div class="sec-title">Projects</div>
+  <div>
+    <div class="row">
+      <span class="job-title">JaagrukBharat &mdash; Founder &amp; Lead Developer</span>
+      <span class="meta" style="font-size:8pt;font-style:italic;color:#555;">Next.js &middot; Node.js &middot; MongoDB &middot; AWS (S3, CloudFront, EC2)</span>
+    </div>
+    <ul>
+      <li>Designed and built a scalable civic awareness platform from scratch, scaling to <strong>~20K daily active users</strong> with SSR, CDN caching, and indexed MongoDB queries.</li>
+      <li>Achieved &lt;1s load time and 95+ Lighthouse score via WebP image optimization, lazy loading, and edge caching; automated CI/CD to AWS with blue-green deployments.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-title">Education</div>
+  <div class="edu-row">
+    <span style="font-weight:700;">B.Tech in Computer Science &mdash; Delhi Technological University</span>
+    <span class="meta">2016 &ndash; 2020 &nbsp;|&nbsp; CGPA: 7.32</span>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-title">Publications</div>
+  <p class="pub">
+    <a href="https://link.springer.com/chapter/10.1007/978-981-15-7345-3_16" style="color:#111;font-weight:700;">Cardiovascular Disease Classification Using Different Algorithms</a> &mdash; Sep 2020<br/>
+    Comparative ML study on cardiovascular disease classification using the UCI Cleveland dataset, evaluating precision, recall, and accuracy across multiple algorithms including Random Forest, SVM, and Neural Networks. Springer.
+  </p>
+</div>
+
+</div>
+</body>
+</html>

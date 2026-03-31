@@ -1,34 +1,31 @@
-import { Document, Page, pdfjs } from 'react-pdf';
-import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
-import "react-pdf/dist/esm/Page/TextLayer.css"
 import "./resume.css";
-import useDeviceType from "./useDeviceType";
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 const Resume = () => {
-    const isMobile = useDeviceType();
-    const pdfUrl = 'https://raw.githubusercontent.com/roshan2498/roshanportfolio/main/public/resume.pdf';
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/resume.html";
+    link.download = "Roshan_Kharke_Resume.html";
+    link.click();
+  };
 
-    const handleDownload = () => {
-        const link = document.createElement('a');
-        link.href = pdfUrl;
-        link.download = 'resume.pdf';
-        link.click();
-    };
-
-    return (
-        <div className="container">
-            <div className="button-container">
-                <button className="btn btn-success" onClick={handleDownload}>Download</button>
-            </div>
-            <div >
-                <Document file={pdfUrl} options={{ workerSrc: pdfjs.GlobalWorkerOptions.workerSrc }} >
-                    <Page pageNumber={1} scale={isMobile ? 1 : 2} />
-                </Document>
-            </div>
-        </div>
-    );
+  return (
+    <div className="resume-page">
+      <nav className="resume-nav">
+        <a href="/" className="resume-back">← Back</a>
+        <span className="resume-nav-title">Resume</span>
+        <button className="resume-download-btn" onClick={handleDownload}>
+          Download
+        </button>
+      </nav>
+      <div className="resume-viewer">
+        <iframe
+          src="/resume.html"
+          title="Roshan Kharke Resume"
+          className="resume-iframe"
+        />
+      </div>
+    </div>
+  );
 };
 
 export default Resume;
-
