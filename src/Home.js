@@ -56,7 +56,7 @@ const EXPERIENCE = [
 const PROJECTS = [
   {
     title: "JaagrukBharat",
-    role: "Founder & Lead Developer",
+    role: "Lead Developer",
     tech: ["Next.js", "Node.js", "MongoDB", "AWS S3", "CloudFront"],
     description:
       "Civic awareness platform serving ~20K daily active users with <1s load time and 95+ Lighthouse score. Implemented SSR, CDN caching, and automated CI/CD to AWS.",
