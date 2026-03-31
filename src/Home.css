@@ -97,9 +97,24 @@
   padding: 8rem 2.5rem 5rem;
 }
 
-.hero-content {
-  max-width: 680px;
+.hero-inner {
+  max-width: 1100px;
   margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 560px;
+}
+
+.hero-instagram {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .hero-greeting {
@@ -140,8 +155,37 @@
 
 .hero-links {
   display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.hero-cta {
+  display: flex;
   gap: 0.75rem;
+  flex-wrap: nowrap;
+}
+
+.hero-socials {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
   flex-wrap: wrap;
+}
+
+.hero-socials a {
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.hero-socials a:hover {
+  color: var(--accent);
+}
+
+.hero-socials span {
+  color: var(--border);
+  font-size: 0.75rem;
 }
 
 /* ── Buttons ───────────────────────────────────────────────── */
@@ -478,6 +522,33 @@
   line-height: 1.5;
 }
 
+/* ── Spotify ───────────────────────────────────────────────── */
+.beyond-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.spotify-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.spotify-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+.spotify-iframe {
+  border-radius: 12px;
+  display: block;
+}
+
 /* ── Instagram section ─────────────────────────────────────── */
 .instagram-container {
   display: flex;
@@ -638,6 +709,19 @@ behold-widget {
 }
 
 /* ── Responsive ────────────────────────────────────────────── */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-instagram {
+    max-width: 480px;
+  }
+}
+
+/* Mobile */
 @media (max-width: 640px) {
   .nav {
     padding: 0.9rem 1.25rem;
@@ -648,11 +732,32 @@ behold-widget {
   }
 
   .hero {
-    padding: 6rem 1.25rem 3.5rem;
+    padding: 5.5rem 1.25rem 3rem;
+    min-height: auto;
+  }
+
+  .hero-name {
+    font-size: clamp(2.2rem, 10vw, 3rem);
+  }
+
+  .hero-title {
+    font-size: 1rem;
+  }
+
+  .hero-summary {
+    font-size: 0.9rem;
+  }
+
+  .hero-instagram {
+    display: none;
   }
 
   .section {
-    padding: 3.5rem 1.25rem;
+    padding: 3rem 1.25rem;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
   }
 
   .job-header {
@@ -669,13 +774,21 @@ behold-widget {
   }
 
   .skills-grid,
-  .projects-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .beyond-grid {
+    grid-template-columns: 1fr;
+  }
+
   .hobbies-grid {
     grid-template-columns: 1fr 1fr;
   }
 
-  .instagram-body {
-    flex-direction: column;
-    text-align: center;
+  .footer-links {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }

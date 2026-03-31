@@ -105,55 +105,44 @@ export default function Home() {
 
       {/* HERO */}
       <section id="about" className="hero">
-        <div className="hero-content">
-          <p className="hero-greeting">Hi, I'm</p>
-          <h1 className="hero-name">Roshan Kharke</h1>
-          <p className="hero-title">Full-Stack Software Engineer</p>
-          <p className="hero-summary">
-            4+ years building scalable cloud-native backend services and modern
-            frontend systems. Deep expertise in distributed system design,
-            microservices architecture, and data-driven engineering on AWS.
-            Previously built internal tooling at Google via EPAM Systems.
-          </p>
-          <div className="hero-links">
-            <a
-              href="https://github.com/roshan2498"
-              target="_blank"
-              rel="noreferrer"
-              className="btn btn-primary"
-            >
-              GitHub
-            </a>
-            <a
-              href="https://linkedin.com/in/nikoCodes"
-              target="_blank"
-              rel="noreferrer"
-              className="btn btn-secondary"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="https://leetcode.com/nikoCodes"
-              target="_blank"
-              rel="noreferrer"
-              className="btn btn-secondary"
-            >
-              LeetCode
-            </a>
-            <a
-              href="https://instagram.com/roshan_kharke"
-              target="_blank"
-              rel="noreferrer"
-              className="btn btn-instagram"
-            >
-              Instagram
-            </a>
-            <a
-              href="mailto:roshan.kharke@gmail.com"
-              className="btn btn-secondary"
-            >
-              Email
-            </a>
+        <div className="hero-inner">
+          <div className="hero-content">
+            <p className="hero-greeting">Hi, I'm</p>
+            <h1 className="hero-name">Roshan Kharke</h1>
+            <p className="hero-title">Full-Stack Software Engineer</p>
+            <p className="hero-summary">
+              4+ years building scalable cloud-native backend services and modern
+              frontend systems. Deep expertise in distributed system design,
+              microservices architecture, and data-driven engineering on AWS.
+              Previously built internal tooling at Google via EPAM Systems.
+            </p>
+            <div className="hero-links">
+              <div className="hero-cta">
+                <a
+                  href="https://github.com/roshan2498"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-primary"
+                >
+                  GitHub
+                </a>
+                <a href="/resume" className="btn btn-secondary">
+                  Resume
+                </a>
+              </div>
+              <div className="hero-socials">
+                <a href="https://linkedin.com/in/nikoCodes" target="_blank" rel="noreferrer">LinkedIn</a>
+                <span>·</span>
+                <a href="https://leetcode.com/nikoCodes" target="_blank" rel="noreferrer">LeetCode</a>
+                <span>·</span>
+                <a href="https://instagram.com/roshan_kharke" target="_blank" rel="noreferrer">Instagram</a>
+                <span>·</span>
+                <a href="mailto:roshan.kharke@gmail.com">Email</a>
+              </div>
+            </div>
+          </div>
+          <div className="hero-instagram">
+            <behold-widget feed-id="Qbdaywcn9ucVNu2WBP4H"></behold-widget>
           </div>
         </div>
       </section>
@@ -270,29 +259,35 @@ export default function Home() {
       <section className="section">
         <div className="container">
           <h2 className="section-title">Beyond Code</h2>
-          <div className="hobbies-grid">
-            {[
-              { emoji: "🏋️", label: "Powerlifting", desc: "Competing in strength sports and chasing PRs." },
-              { emoji: "🏃", label: "Running", desc: "Long-distance runs to clear the mind and build endurance." },
-              { emoji: "👨‍🍳", label: "Cooking", desc: "Experimenting with cuisines and perfecting recipes." },
-              { emoji: "✈️", label: "Travelling", desc: "Collecting experiences across cities and cultures." },
-            ].map((h) => (
-              <div key={h.label} className="hobby-card">
-                <span className="hobby-emoji">{h.emoji}</span>
-                <h4 className="hobby-label">{h.label}</h4>
-                <p className="hobby-desc">{h.desc}</p>
-              </div>
-            ))}
+          <div className="beyond-grid">
+            <div className="hobbies-grid">
+              {[
+                { emoji: "🏋️", label: "Powerlifting", desc: "Competing in strength sports and chasing PRs." },
+                { emoji: "🏃", label: "Running", desc: "Long-distance runs to clear the mind and build endurance." },
+                { emoji: "👨‍🍳", label: "Cooking", desc: "Experimenting with cuisines and perfecting recipes." },
+                { emoji: "✈️", label: "Travelling", desc: "Collecting experiences across cities and cultures." },
+              ].map((h) => (
+                <div key={h.label} className="hobby-card">
+                  <span className="hobby-emoji">{h.emoji}</span>
+                  <h4 className="hobby-label">{h.label}</h4>
+                  <p className="hobby-desc">{h.desc}</p>
+                </div>
+              ))}
+            </div>
+            <div className="spotify-wrap">
+              <p className="spotify-label">🎧 Current Playlist</p>
+              <iframe
+                src="https://open.spotify.com/embed/playlist/3LRGMv8m4JejxYGnMqHBox?utm_source=generator&theme=0"
+                width="100%"
+                height="352"
+                frameBorder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+                title="Roshan's Gym Playlist"
+                className="spotify-iframe"
+              />
+            </div>
           </div>
-        </div>
-      </section>
-
-      {/* INSTAGRAM FEED */}
-      <section className="section section-alt">
-        <div className="container">
-          <h2 className="section-title">Instagram</h2>
-          <p className="insta-sub">@roshan_kharke</p>
-          <behold-widget feed-id="Qbdaywcn9ucVNu2WBP4H"></behold-widget>
         </div>
       </section>
 
