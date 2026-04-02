@@ -1,0 +1,89 @@
+.nutrition-guide {
+  --color-text-primary: #e2e8f0;
+  --color-text-secondary: #94a3b8;
+  --color-background-primary: #0f0f1a;
+  --color-background-secondary: #151520;
+  --color-border-primary: #4a4a6a;
+  --color-border-secondary: #2e2e48;
+  --color-border-tertiary: #1e1e30;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", "Helvetica Neue", sans-serif;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+
+  background: #080810;
+  color: #e2e8f0;
+  min-height: 100vh;
+  padding: 2rem 1.5rem;
+}
+
+.nutrition-guide button {
+  font-family: inherit;
+}
+
+/* ── Mobile ───────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .nutrition-guide {
+    padding: 1.25rem 1rem;
+  }
+
+  /* Nav tabs: horizontal scroll instead of wrapping */
+  .nutrition-guide .tab-bar {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+    margin-bottom: 1.25rem !important;
+  }
+  .nutrition-guide .tab-bar::-webkit-scrollbar {
+    display: none;
+  }
+  .nutrition-guide .tab-bar button {
+    flex-shrink: 0;
+  }
+
+  /* Meal table: stack into two lines per row */
+  .nutrition-guide .meal-row {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+    padding: 10px 0 !important;
+  }
+  .nutrition-guide .meal-row .meal-name {
+    font-size: 12px !important;
+    color: #94a3b8 !important;
+  }
+  .nutrition-guide .meal-row.total-row .meal-name {
+    color: #e2e8f0 !important;
+  }
+  .nutrition-guide .meal-row .meal-macros {
+    display: flex;
+    gap: 12px;
+    margin-top: 2px;
+  }
+  .nutrition-guide .meal-row .meal-macros span {
+    font-size: 12px;
+    color: #94a3b8;
+  }
+  .nutrition-guide .meal-row .meal-macros span.protein {
+    color: #1D9E75;
+    font-weight: 500;
+  }
+
+  /* Supplement dose/timing: stack vertically */
+  .nutrition-guide .supp-meta {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Overview stats grid: 2 cols on mobile */
+  .nutrition-guide .stats-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* Grocery grid: single column */
+  .nutrition-guide .grocery-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
