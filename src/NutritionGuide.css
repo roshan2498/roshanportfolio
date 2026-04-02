@@ -1,17 +1,17 @@
 .nutrition-guide {
-  --color-text-primary: #e2e8f0;
-  --color-text-secondary: #94a3b8;
-  --color-background-primary: #0f0f1a;
-  --color-background-secondary: #151520;
-  --color-border-primary: #4a4a6a;
-  --color-border-secondary: #2e2e48;
-  --color-border-tertiary: #1e1e30;
+  --color-text-primary: var(--text);
+  --color-text-secondary: var(--muted-light);
+  --color-background-primary: var(--surface);
+  --color-background-secondary: var(--surface-2);
+  --color-border-primary: var(--muted);
+  --color-border-secondary: var(--border);
+  --color-border-tertiary: var(--border);
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", "Helvetica Neue", sans-serif;
   --border-radius-md: 8px;
   --border-radius-lg: 12px;
 
-  background: #080810;
-  color: #e2e8f0;
+  background: var(--bg);
+  color: var(--text);
   min-height: 100vh;
   padding: 2rem 1.5rem;
 }

@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import "./Home.css";
+import ThemeToggle from "./ThemeToggle";
 
 const SKILLS = {
   Backend: ["Node.js", "Express", "FastAPI", "Java 8", "REST APIs", "GraphQL", "Microservices"],
@@ -80,7 +81,7 @@ const PROJECTS = [
   },
 ];
 
-export default function Home() {
+export default function Home({ theme, onToggleTheme }) {
   useEffect(() => {
     const s = document.createElement("script");
     s.type = "module";
@@ -100,6 +101,7 @@ export default function Home() {
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
           <a href="/resume" className="nav-cta">Resume</a>
+          <ThemeToggle theme={theme} toggle={onToggleTheme} />
         </div>
       </nav>
 

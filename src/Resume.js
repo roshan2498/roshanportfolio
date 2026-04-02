@@ -1,6 +1,7 @@
 import "./resume.css";
+import ThemeToggle from "./ThemeToggle";
 
-const Resume = () => {
+const Resume = ({ theme, onToggleTheme }) => {
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = "/resume.html";
@@ -13,9 +14,12 @@ const Resume = () => {
       <nav className="resume-nav">
         <a href="/" className="resume-back">← Back</a>
         <span className="resume-nav-title">Resume</span>
-        <button className="resume-download-btn" onClick={handleDownload}>
-          Download
-        </button>
+        <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+          <ThemeToggle theme={theme} toggle={onToggleTheme} />
+          <button className="resume-download-btn" onClick={handleDownload}>
+            Download
+          </button>
+        </div>
       </nav>
       <div className="resume-viewer">
         <iframe

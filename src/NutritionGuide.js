@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./NutritionGuide.css";
+import ThemeToggle from "./ThemeToggle";
 
 const sections = [
   {
@@ -163,16 +164,21 @@ const typeColor = { supp: "#E1F5EE", food: "#E6F1FB", train: "#FAEEDA" };
 const typeText = { supp: "#0F6E56", food: "#185FA5", train: "#854F0B" };
 const typeLabel = { supp: "Supplement", food: "Meal", train: "Training" };
 
-export default function NutritionGuide() {
+export default function NutritionGuide({ theme, onToggleTheme }) {
   const [active, setActive] = useState("overview");
 
   return (
     <div className="nutrition-guide" style={{ fontFamily: "var(--font-sans)", color: "var(--color-text-primary)" }}>
       <div style={{ maxWidth: 780, margin: "0 auto" }}>
       <div style={{ marginBottom: "1.5rem" }}>
-        <p style={{ fontSize: 12, color: "var(--color-text-secondary)", margin: "0 0 4px", textTransform: "uppercase", letterSpacing: "0.08em" }}>Personal guide</p>
-        <h1 style={{ fontSize: 22, fontWeight: 500, margin: "0 0 4px" }}>Nutrition & Supplements</h1>
-        <p style={{ fontSize: 14, color: "var(--color-text-secondary)", margin: 0 }}>Tailored for Indian diet · Powerlifting + Running · Body recomposition</p>
+        <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 12 }}>
+          <div>
+            <p style={{ fontSize: 12, color: "var(--color-text-secondary)", margin: "0 0 4px", textTransform: "uppercase", letterSpacing: "0.08em" }}>Personal guide</p>
+            <h1 style={{ fontSize: 22, fontWeight: 500, margin: "0 0 4px" }}>Nutrition & Supplements</h1>
+            <p style={{ fontSize: 14, color: "var(--color-text-secondary)", margin: 0 }}>Tailored for Indian diet · Powerlifting + Running · Body recomposition</p>
+          </div>
+          <ThemeToggle theme={theme} toggle={onToggleTheme} />
+        </div>
       </div>
 
       <div className="tab-bar" style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: "1.5rem" }}>

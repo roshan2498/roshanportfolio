@@ -1,11 +1,27 @@
 :root {
   --bg: #080810;
   --surface: #0f0f1a;
+  --surface-2: #151520;
   --border: #1e1e30;
   --text: #e2e8f0;
   --muted: #64748b;
+  --muted-light: #94a3b8;
   --accent: #818cf8;
   --accent-light: #a5b4fc;
+  --accent-dim: rgba(129, 140, 248, 0.12);
+}
+
+[data-theme="light"] {
+  --bg: #f5f5f7;
+  --surface: #ffffff;
+  --surface-2: #f0f0f5;
+  --border: #d1d5db;
+  --text: #0f172a;
+  --muted: #64748b;
+  --muted-light: #475569;
+  --accent: #6366f1;
+  --accent-light: #818cf8;
+  --accent-dim: rgba(99, 102, 241, 0.1);
 }
 
 .resume-page {
@@ -25,7 +41,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem 2.5rem;
-  background: rgba(8, 8, 16, 0.85);
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
