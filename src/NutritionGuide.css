@@ -20,6 +20,36 @@
   font-family: inherit;
 }
 
+/* ── Meal table ───────────────────────────────────────────── */
+.meal-table {
+  display: grid;
+  grid-template-columns: 90px 1fr 72px 72px;
+  column-gap: 16px;
+  align-items: center;
+}
+
+.meal-col-protein {
+  font-size: 13px;
+  font-weight: 500;
+  text-align: right;
+  color: #1D9E75;
+  margin: 0;
+}
+
+.meal-col-cal {
+  font-size: 13px;
+  text-align: right;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.meal-col-header {
+  font-size: 11px;
+  text-align: right;
+  color: #64748b;
+  margin: 0;
+}
+
 /* ── Mobile ───────────────────────────────────────────────── */
 @media (max-width: 600px) {
   .nutrition-guide {
@@ -37,40 +67,43 @@
     padding-bottom: 2px;
     margin-bottom: 1.25rem !important;
   }
-  .nutrition-guide .tab-bar::-webkit-scrollbar {
-    display: none;
-  }
-  .nutrition-guide .tab-bar button {
-    flex-shrink: 0;
-  }
+  .nutrition-guide .tab-bar::-webkit-scrollbar { display: none; }
+  .nutrition-guide .tab-bar button { flex-shrink: 0; }
 
-  /* Meal table: stack into two lines per row */
-  .nutrition-guide .meal-row {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 2px !important;
-    padding: 10px 0 !important;
+  /* Meal table: switch to stacked layout */
+  .meal-table {
+    grid-template-columns: 1fr auto auto !important;
+    grid-template-rows: auto auto;
+    column-gap: 12px !important;
+    row-gap: 2px;
   }
-  .nutrition-guide .meal-row .meal-name {
-    font-size: 12px !important;
+  .meal-table .meal-name {
+    grid-column: 1 / -1;
+    font-size: 11px !important;
+    color: #64748b !important;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .meal-table.total-row .meal-name {
     color: #94a3b8 !important;
   }
-  .nutrition-guide .meal-row.total-row .meal-name {
-    color: #e2e8f0 !important;
+  .meal-table .meal-items {
+    grid-column: 1;
+    font-size: 13px;
   }
-  .nutrition-guide .meal-row .meal-macros {
-    display: flex;
-    gap: 12px;
-    margin-top: 2px;
-  }
-  .nutrition-guide .meal-row .meal-macros span {
+  .meal-table .meal-col-protein {
+    grid-column: 2;
+    grid-row: 2;
     font-size: 12px;
-    color: #94a3b8;
+    white-space: nowrap;
   }
-  .nutrition-guide .meal-row .meal-macros span.protein {
-    color: #1D9E75;
-    font-weight: 500;
+  .meal-table .meal-col-cal {
+    grid-column: 3;
+    grid-row: 2;
+    font-size: 12px;
+    white-space: nowrap;
   }
+  .meal-col-header { display: none; }
 
   /* Supplement dose/timing: stack vertically */
   .nutrition-guide .supp-meta {

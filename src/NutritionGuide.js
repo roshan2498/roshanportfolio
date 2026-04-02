@@ -167,7 +167,8 @@ export default function NutritionGuide() {
   const [active, setActive] = useState("overview");
 
   return (
-    <div className="nutrition-guide" style={{ fontFamily: "var(--font-sans)", color: "var(--color-text-primary)", maxWidth: 780, margin: "0 auto", padding: "1rem 0" }}>
+    <div className="nutrition-guide" style={{ fontFamily: "var(--font-sans)", color: "var(--color-text-primary)" }}>
+      <div style={{ maxWidth: 780, margin: "0 auto" }}>
       <div style={{ marginBottom: "1.5rem" }}>
         <p style={{ fontSize: 12, color: "var(--color-text-secondary)", margin: "0 0 4px", textTransform: "uppercase", letterSpacing: "0.08em" }}>Personal guide</p>
         <h1 style={{ fontSize: 22, fontWeight: 500, margin: "0 0 4px" }}>Nutrition & Supplements</h1>
@@ -264,21 +265,20 @@ export default function NutritionGuide() {
       {active === "veg" && (
         <div>
           <p style={{ fontSize: 14, color: "var(--color-text-secondary)", marginBottom: "1rem", lineHeight: 1.7 }}>Vegetarian days are harder to hit protein on. The key rule: always combine two protein sources per meal. Dal alone won't cut it.</p>
+          <div className="meal-table" style={{ padding: "4px 0 2px", borderBottom: "0.5px solid var(--color-border-tertiary)" }}>
+            <div />
+            <div />
+            <p className="meal-col-header">Protein</p>
+            <p className="meal-col-header">Kcal</p>
+          </div>
           {vegDay.map((row, i) => (
-            <div key={i} className={`meal-row${row.total ? " total-row" : ""}`} style={{ display: "grid", gridTemplateColumns: "90px 1fr 60px 60px", gap: 8, alignItems: "center", padding: "10px 0", borderBottom: i < vegDay.length - 1 ? "0.5px solid var(--color-border-tertiary)" : "none", background: row.total ? "var(--color-background-secondary)" : "transparent", borderRadius: row.total ? "var(--border-radius-md)" : 0, paddingLeft: row.total ? 10 : 0, paddingRight: row.total ? 10 : 0 }}>
+            <div key={i} className={`meal-table${row.total ? " total-row" : ""}`} style={{ padding: "10px 0", borderBottom: i < vegDay.length - 1 ? "0.5px solid var(--color-border-tertiary)" : "none", background: row.total ? "var(--color-background-secondary)" : "transparent", borderRadius: row.total ? "var(--border-radius-md)" : 0, paddingLeft: row.total ? 10 : 0, paddingRight: row.total ? 10 : 0 }}>
               <p className="meal-name" style={{ fontSize: 13, fontWeight: 500, margin: 0, color: row.total ? "var(--color-text-primary)" : "var(--color-text-secondary)" }}>{row.meal}</p>
-              <p style={{ fontSize: 13, margin: 0, lineHeight: 1.5 }}>{row.items}</p>
-              <div className="meal-macros">
-                <span className="protein">{row.protein}</span>
-                <span>{row.cal}</span>
-              </div>
+              <p className="meal-items" style={{ fontSize: 13, margin: 0, lineHeight: 1.5 }}>{row.items}</p>
+              <p className="meal-col-protein">{row.protein}</p>
+              <p className="meal-col-cal">{row.cal}</p>
             </div>
           ))}
-          <div style={{ display: "grid", gridTemplateColumns: "90px 1fr 60px 60px", gap: 8, paddingTop: 6 }}>
-            <div /><div />
-            <p style={{ fontSize: 11, color: "var(--color-text-secondary)", textAlign: "right", margin: 0 }}>Protein</p>
-            <p style={{ fontSize: 11, color: "var(--color-text-secondary)", textAlign: "right", margin: 0 }}>Kcal</p>
-          </div>
           <div style={{ background: "var(--color-background-primary)", border: "0.5px solid var(--color-border-tertiary)", borderRadius: "var(--border-radius-lg)", padding: "1rem", marginTop: "1.25rem" }}>
             <p style={{ fontWeight: 500, fontSize: 14, margin: "0 0 8px" }}>Veg day power pairs</p>
             {[["Dal + curd", "Add a bowl of dahi to any dal meal"], ["Paneer + eggs", "Paneer bhurji made with 1 egg = extra 6g protein"], ["Rajma + Greek yogurt", "Raita on the side easily adds 10–12g"], ["Chana + tofu", "Mix into a salad or sabzi for gym days"]].map(([a, b]) => (
@@ -291,21 +291,20 @@ export default function NutritionGuide() {
       {active === "nonveg" && (
         <div>
           <p style={{ fontSize: 14, color: "var(--color-text-secondary)", marginBottom: "1rem", lineHeight: 1.7 }}>Non-veg days make hitting protein much easier. Use these days to hit the higher end of your target (165g+).</p>
+          <div className="meal-table" style={{ padding: "4px 0 2px", borderBottom: "0.5px solid var(--color-border-tertiary)" }}>
+            <div />
+            <div />
+            <p className="meal-col-header">Protein</p>
+            <p className="meal-col-header">Kcal</p>
+          </div>
           {nonVegDay.map((row, i) => (
-            <div key={i} className={`meal-row${row.total ? " total-row" : ""}`} style={{ display: "grid", gridTemplateColumns: "90px 1fr 60px 60px", gap: 8, alignItems: "center", padding: "10px 0", borderBottom: i < nonVegDay.length - 1 ? "0.5px solid var(--color-border-tertiary)" : "none", background: row.total ? "var(--color-background-secondary)" : "transparent", borderRadius: row.total ? "var(--border-radius-md)" : 0, paddingLeft: row.total ? 10 : 0, paddingRight: row.total ? 10 : 0 }}>
+            <div key={i} className={`meal-table${row.total ? " total-row" : ""}`} style={{ padding: "10px 0", borderBottom: i < nonVegDay.length - 1 ? "0.5px solid var(--color-border-tertiary)" : "none", background: row.total ? "var(--color-background-secondary)" : "transparent", borderRadius: row.total ? "var(--border-radius-md)" : 0, paddingLeft: row.total ? 10 : 0, paddingRight: row.total ? 10 : 0 }}>
               <p className="meal-name" style={{ fontSize: 13, fontWeight: 500, margin: 0, color: row.total ? "var(--color-text-primary)" : "var(--color-text-secondary)" }}>{row.meal}</p>
-              <p style={{ fontSize: 13, margin: 0, lineHeight: 1.5 }}>{row.items}</p>
-              <div className="meal-macros">
-                <span className="protein">{row.protein}</span>
-                <span>{row.cal}</span>
-              </div>
+              <p className="meal-items" style={{ fontSize: 13, margin: 0, lineHeight: 1.5 }}>{row.items}</p>
+              <p className="meal-col-protein">{row.protein}</p>
+              <p className="meal-col-cal">{row.cal}</p>
             </div>
           ))}
-          <div style={{ display: "grid", gridTemplateColumns: "90px 1fr 60px 60px", gap: 8, paddingTop: 6 }}>
-            <div /><div />
-            <p style={{ fontSize: 11, color: "var(--color-text-secondary)", textAlign: "right", margin: 0 }}>Protein</p>
-            <p style={{ fontSize: 11, color: "var(--color-text-secondary)", textAlign: "right", margin: 0 }}>Kcal</p>
-          </div>
           <div style={{ background: "var(--color-background-primary)", border: "0.5px solid var(--color-border-tertiary)", borderRadius: "var(--border-radius-lg)", padding: "1rem", marginTop: "1.25rem" }}>
             <p style={{ fontWeight: 500, fontSize: 14, margin: "0 0 8px" }}>Best protein sources ranked</p>
             {[["Chicken breast (100g)", "31g protein, 165 kcal — king of lean protein"],
@@ -360,6 +359,7 @@ export default function NutritionGuide() {
           ))}
         </div>
       )}
+      </div>
     </div>
   );
 }
