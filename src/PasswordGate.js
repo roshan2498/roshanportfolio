@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 //   h('yourpassword').then(console.log)
 const STORED_HASH = "521fd0a303b99ce6e30223b25c54fca3b73e0e6879781571faf284af5469a509";
 
-const SESSION_KEY = "pg_nutrition_ok";
+const SESSION_KEY = "x7k2mq9vbw";
 
 async function sha256(text) {
   const buf = await crypto.subtle.digest(
