@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Home";
+import Portfolio from "./Portfolio";
+import KageOriginal from "./KageOriginal";
 import Resume from "./Resume";
 import NutritionGuide from "./NutritionGuide";
 import PasswordGate from "./PasswordGate";
@@ -11,7 +13,9 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home theme={theme} onToggleTheme={toggle} />} />
+        <Route path="/" element={<Portfolio />} />
+        <Route path="/classic" element={<Home theme={theme} onToggleTheme={toggle} />} />
+        <Route path="/kage" element={<KageOriginal />} />
         <Route path="/resume" exact element={<Resume theme={theme} onToggleTheme={toggle} />} />
         <Route path="/nutrition" element={<PasswordGate><NutritionGuide theme={theme} onToggleTheme={toggle} /></PasswordGate>} />
       </Routes>
